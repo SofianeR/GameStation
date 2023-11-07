@@ -87,20 +87,24 @@
                         "description": "gameroom id"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     },
                     "playersId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "user id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "user id"
+                                }
                             }
                         }
                     },
@@ -135,11 +139,13 @@
                         "$ref": "#/components/schemas/Message"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     }
@@ -162,7 +168,7 @@
                         "type": "string",
                           "description": ""   
                       },
-                    "player": {  "type": "string", "description": "string"},
+                    "playerId": {  "type": "string", "description": "string"},
                     "message": { "type": "string","description": ""  }
                 }
             }
