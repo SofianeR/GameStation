@@ -1,0 +1,170 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "description": "desc",
+        "version": "v1.0",
+        "title": "ee"
+    },
+    "paths": {
+        "/api/test": {
+            "get": {
+                "tags": [],
+                "summary": "fbuhfrjek",
+                "operationId": "test-operation",
+                "parameters": [
+                    {
+                        "name": "param1",
+                        "in": "query",
+                        "description": "description",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schema/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schema/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "required": ["id", "name", "description", "role", "email", "password"],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/Roles"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": ""
+                    }
+                }
+            },
+            "Roles": {
+                "enum":[
+                    "Administrator",
+                    "GameHoster",
+                    "Joueur"
+                ]  
+            },
+            "GameRoom": {
+                "type": "object",
+                "required": ["id",
+                            "modsId",
+                            "playersId",
+                            "gameId",
+                            "chatId",
+                            "isPrivate",
+                            "isMulti"],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "gameroom id"
+                    },
+                    "modsId": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "mod id"
+                            }
+                        }
+                    },
+                    "playersId": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "user id"
+                            }
+                        }
+                    },
+                    "gameId": {
+                        "type": "string",
+                        "description": ""
+                    },
+                    "chatId": {
+                      "type": "string",
+                        "description": ""   
+                    },
+                    "isPrivate": {
+                        "type": "boolean"
+                    },
+                    "isMulti": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ChatRoom": {
+                "type": "object",
+                "required": ["id",
+                "type",
+                "players",
+                "messages",
+                "modsId"],
+                "properties": {
+                    "id": {},
+                    "type": {},
+                    "players": {},
+                    "messages": {
+                        "$ref": "#/components/schemas/Message"
+                    },
+                    "modsId": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "mod id"
+                            }
+                        }
+                    }
+                }
+            },
+            "Message": {
+                "type": "object",
+                "required": [
+                    "id",
+                        "chatId",
+                        "player",
+                        "message"
+                ],
+                "properties": {
+                    "id": {  
+                        "type": "string",
+                          "description": ""  
+                        },
+                    "chatId": {
+                        "type": "string",
+                          "description": ""   
+                      },
+                    "player": {  "type": "string", "description": "string"},
+                    "message": { "type": "string","description": ""  }
+                }
+            }
+        }
+    }
+}
