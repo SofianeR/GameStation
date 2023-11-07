@@ -5,27 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-=======
-
     "start":"node index.js",
     "dev" : "nodemon index.js",
     "generate": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 openapi-generator-cli generate -i ./src/utis/swagger.json -g typescript-axios -o ./src/utils/generated --additional-properties supportsES6=true"
->>>>>>> 82d9462a01bf7b95ad973e895fdba6eb4fa64f2e
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "@openapitools/openapi-generator-cli": "^2.7.0",
     "cross-env": "^7.0.3"
-=======
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "socket.io": "^4.7.2"
->>>>>>> 82d9462a01bf7b95ad973e895fdba6eb4fa64f2e
+
   }
 }
