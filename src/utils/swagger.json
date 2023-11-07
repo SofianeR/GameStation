@@ -18,7 +18,7 @@
                         "description": "description",
                         "required": true,
                         "schema": {
-                            "$ref": "#/components/schema/User"
+                            "$ref": "#/components/schemas/User"
                         }
                     }
                 ],
@@ -28,7 +28,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schema/User"
+                                    "$ref": "#/components/schemas/User"
                                 }
                             }
                         }
@@ -65,6 +65,7 @@
                 }
             },
             "Roles": {
+                "type": "string",
                 "enum":[
                     "Administrator",
                     "GameHoster",
