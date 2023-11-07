@@ -132,9 +132,18 @@
                 "messages",
                 "modsId"],
                 "properties": {
-                    "id": {},
-                    "type": {},
-                    "players": {},
+                    "id": {
+                        "type": "string",
+                          "description": ""  
+                    },
+                    "type": {
+                        "type": "string",
+                          "description": ""  
+                    },
+                    "players": {
+                        "type": "string",
+                          "description": ""  
+                    },
                     "messages": {
                         "$ref": "#/components/schemas/Message"
                     },
