@@ -5,7 +5,38 @@
         "version": "v1.0",
         "title": "ee"
     },
-
+    "paths": {
+        "/api/test": {
+            "get": {
+                "tags": [],
+                "summary": "fbuhfrjek",
+                "operationId": "test-operation",
+                "parameters": [
+                    {
+                        "name": "param1",
+                        "in": "query",
+                        "description": "description",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "components": {
         "schemas": {
             "User": {
@@ -34,6 +65,7 @@
                 }
             },
             "Roles": {
+                "type": "string",
                 "enum":[
                     "Administrator",
                     "GameHoster",
@@ -55,20 +87,24 @@
                         "description": "gameroom id"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     },
                     "playersId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "user id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "user id"
+                                }
                             }
                         }
                     },
@@ -103,11 +139,13 @@
                         "$ref": "#/components/schemas/Message"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     }
@@ -117,9 +155,9 @@
                 "type": "object",
                 "required": [
                     "id",
-"chatId",
-"player",
-"message"
+                        "chatId",
+                        "player",
+                        "message"
                 ],
                 "properties": {
                     "id": {  
@@ -130,7 +168,7 @@
                         "type": "string",
                           "description": ""   
                       },
-                    "player": {  "type": "string", "description": "string"},
+                    "playerId": {  "type": "string", "description": "string"},
                     "message": { "type": "string","description": ""  }
                 }
             }
