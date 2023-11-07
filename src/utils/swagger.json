@@ -18,7 +18,7 @@
                         "description": "description",
                         "required": true,
                         "schema": {
-                            "$ref": "#/components/schema/User"
+                            "$ref": "#/components/schemas/User"
                         }
                     }
                 ],
@@ -28,7 +28,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schema/User"
+                                    "$ref": "#/components/schemas/User"
                                 }
                             }
                         }
@@ -65,6 +65,7 @@
                 }
             },
             "Roles": {
+                "type": "string",
                 "enum":[
                     "Administrator",
                     "GameHoster",
@@ -86,20 +87,24 @@
                         "description": "gameroom id"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     },
                     "playersId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "user id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "user id"
+                                }
                             }
                         }
                     },
@@ -134,11 +139,13 @@
                         "$ref": "#/components/schemas/Message"
                     },
                     "modsId": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "mod id"
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "mod id"
+                                }
                             }
                         }
                     }
@@ -161,7 +168,7 @@
                         "type": "string",
                           "description": ""   
                       },
-                    "player": {  "type": "string", "description": "string"},
+                    "playerId": {  "type": "string", "description": "string"},
                     "message": { "type": "string","description": ""  }
                 }
             }
